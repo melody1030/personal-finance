@@ -25,10 +25,12 @@
       expensesCollection.load();
       var expenses = expensesCollection.find(
         {},
-        {$orderBy:{date:-1},$limit:10}
+        {$orderBy:{date:-1},
+        {$limit:10}
       );
+      console.log(expenses);
       $("#body").append(
-        )
+        );
     </script>
   </body>
 </html>
