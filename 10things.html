@@ -28,7 +28,7 @@
           {$orderBy:{date:-1},$limit:10}
         );
         console.log(expenses);
-        for(var = i;i<expenses.length;i++){
+        for(var i=0;i<expenses.length;i++){
           $("#body").append(
             "<tr><td>expenses[i].date</td><td>xpenses[i].thing</td><td>xpenses[i].money</td></tr>"
           )
