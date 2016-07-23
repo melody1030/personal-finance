@@ -34,7 +34,15 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
-      
+      $("#add").click(function{
+        expensesCollection.insert({
+          money:$("#money").val(),
+          thing:$("#thing").val(),
+          time:$("#time").val(),
+          type:$("#type").val(),
+        });
+        expensesCollection.save();
+      });
 
     </script>
   </body>
