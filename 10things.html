@@ -12,7 +12,7 @@
       <thead>
         <tr>
           <td>時間</td>
-          <td>類別</td>
+          <td>事項</td>
           <td>金額</td>
         </tr>
       </thead>
@@ -22,14 +22,19 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
-      expensesCollection.load();
-      var expenses = expensesCollection.find(
-        {},
-        {$orderBy:{date:-1},$limit:10}
-      );
-      console.log(expenses);
-      $("#body").append(
+      expensesCollection.load(
+        var expenses = expensesCollection.find(
+          {},
+          {$orderBy:{date:-1},$limit:10}
         );
+        console.log(expenses);
+        for(var = i;i<expenses.length;i++){
+        $("#body").append(
+            "<tr><td>expenses[i].date</td><td>xpenses[i].thing</td><td>xpenses[i].money</td></tr>"
+          )
+        }
+      );
+      
     </script>
   </body>
 </html>
