@@ -29,9 +29,15 @@
     <br>
     <input style="width:100%;display:inline" calss="form-contorl" type="text" id="money">
     <br>
-    <button id="add" class="btn btn-danger">確認</button>
+    <button id="add" class="btn btn-danger" style="width:100%">確認</button>
     <script>
-      
+      var fdb = new ForerunnerDB();
+      var db = fdb.db("expenses");
+      var expensesCollection = db.collection('expenses');
+      var 
+      $("#add").click(function(){
+        
+      })
     </script>
   </body>
 </html>
