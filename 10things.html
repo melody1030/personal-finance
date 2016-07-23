@@ -16,16 +16,19 @@
           <td>金額</td>
         </tr>
       </thead>
-      <tbody></body>
+      <tbody id="body"></body>
     </table>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
+      expensesCollection.load();
       var expenses = expensesCollection.find(
         {},
         {$orderBy:{date:-1},$limit:10}
       );
+      $("#body").append(
+        )
     </script>
   </body>
 </html>
