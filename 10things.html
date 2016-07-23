@@ -19,6 +19,8 @@
       <tbody></body>
     </table>
     <script>
+      var fdb = new ForerunnerDB();
+      var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
       var expenses = expensesCollection.find(
         {},
