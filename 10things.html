@@ -18,5 +18,12 @@
       </thead>
       <tbody></body>
     </table>
+    <script>
+      var expensesCollection = db.collection('expenses');
+      var expenses = expensesCollection.find(
+        {},
+        {$orderBy:{date:-1},$limit:10}
+      );
+    </script>
   </body>
 </html>
