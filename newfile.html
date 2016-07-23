@@ -39,12 +39,12 @@
         expensesCollection.insert({
           money:$("#money").val(),
           thing:$("#thing").val(),
-          time:$("#time").val(),
+          time:$("#datw").val(),
           type:$("#type").val(),
         });
         $("#money").val("");
         $("#thing").val("");
-        $("#time").val("");
+        $("#date").val("");
         $("#type").val("");
         expensesCollection.save();
       });
