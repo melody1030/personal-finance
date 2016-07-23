@@ -25,7 +25,7 @@
       expensesCollection.load(function(){
         var expenses = expensesCollection.find(
           {},
-          {$orderBy:{date:-1},$limit:10}
+          {$orderBy:{time:-1},$limit:10}
         );
         console.log(expenses);
         for(var i=0;i<expenses.length;i++){
