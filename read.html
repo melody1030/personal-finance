@@ -34,7 +34,7 @@
       expensesCollection.load(function(){
         var expenses = expensesCollection.find();
         for(var i =0;i<expenses.length;i++){
-          $("#body").append("<tr><td>"+expenses[i].date+
+          $("#body").append("<tr><td>"+expenses[i].time+
           "</td><td>"+expenses[i].thing+
           "</td><td>"+expenses[i].type+
           "</td><td>"+expenses[i].money+
