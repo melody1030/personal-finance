@@ -49,21 +49,21 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
-      expensesCollection.load();
-      $("#add").click(function(){
-        expensesCollection.insert({
-          money:$("#money").val(),
-          thing:$("#thing").val(),
-          time:$("#date").val(),
-          type:$("#type").val(),
+      expensesCollection.load(function(){
+        $("#add").click(function(){
+          expensesCollection.insert({
+            money:$("#money").val(),
+            thing:$("#thing").val(),
+            time:$("#date").val(),
+            type:$("#type").val(),
+          });
+          $("#money").val("");
+          $("#thing").val("");
+          $("#date").val("");
+          $("#type").val("");
+          expensesCollection.save();
         });
-        $("#money").val("");
-        $("#thing").val("");
-        $("#date").val("");
-        $("#type").val("");
-        expensesCollection.save();
       });
-
     </script>
   </body>
 </html>
