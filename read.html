@@ -31,9 +31,9 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
+      var expenses = expensesCollection.find();
       expensesCollection.load();
       function append (){
-        var expenses = expensesCollection.find();
         for(var i =0;i<expenses.length;i++){
           $("#body").append("<tr><td>"+expenses[i].date+
           "</td><td>"+expenses[i].thing+
