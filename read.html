@@ -8,12 +8,11 @@
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <h1 style="text-align:center;
-      background: -webkit-linear-gradient(#66ee78, #16c72e);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;">檢視資料
-    </h1>
+    <div class="non-semantic-protector"> 
+      <h1 class="ribbon">
+        <strong class="ribbon-content">檢視資料</strong>
+      </h1>
+    </div>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -27,6 +26,51 @@
       </tbody>
     </table>
     <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
+        <style>
+      .ribbon {
+       font-size: 15px;
+       width: 70%;
+       position: relative;
+       background: #30c9e8;
+       color: #fff;
+       text-align: center;
+       padding: 15px 35px;
+       margin: 2em auto 3em;
+      }
+      .ribbon:before, .ribbon:after {
+       content: "";
+       position: absolute;
+       display: block;
+       bottom: -1em;
+       border: 1.5em solid #107c91;
+       z-index: -1;
+      }
+      .ribbon:before {
+       left: -2em;
+       border-right-width: 1.5em;
+       border-left-color: transparent;
+      }
+      .ribbon:after {
+       right: -2em;
+       border-left-width: 1.5em;
+       border-right-color: transparent;
+      }
+      .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #16a9c7 transparent transparent transparent;
+        bottom: -1em;
+      }
+      .ribbon .ribbon-content:before {
+        left: 0;
+        border-width: 1em 0 0 1em;
+      }
+      .ribbon .ribbon-content:after {
+         right: 0;
+         border-width: 1em 1em 0 0;
+      }
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
