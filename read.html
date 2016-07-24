@@ -7,6 +7,12 @@
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
+    <h1 style="text-align:center;
+      background: -webkit-linear-gradient(#66ee78, #16c72e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;">檢視資料
+    </h1>
     <table class="">
       <thead>
         <tr>
@@ -19,6 +25,7 @@
       <tbody id="body">
       </tbody>
     </table>
+    <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
