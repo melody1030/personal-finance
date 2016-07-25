@@ -8,8 +8,12 @@
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
+    <div class="non-semantic-protector"> 
+      <h1 class="ribbon">
+        <strong class="ribbon-content">最近10筆資料</strong>
+      </h1>
+    </div>
     <table class="table table-striped">
-      <h2 style="text-align:center">最近10筆資料</h2>
       <thead>
         <tr>
           <td>時間</td>
@@ -20,6 +24,52 @@
       <tbody id="body"></body>
     </table>
     <a href="index.html"><button class="btn btn-success" style="margin-left:5%;width:20%">返回</button></a>
+    <style>
+      .ribbon {
+       font-size: 15px;
+       width: 70%;
+       position: relative;
+       background: #30e849;
+       color: #fff;
+       text-align: center;
+       padding: 15px 35px;
+       margin: 2em auto 3em;
+      }
+      .ribbon:before, .ribbon:after {
+       content: "";
+       position: absolute;
+       display: block;
+       bottom: -1em;
+       border: 1.5em solid #109121;
+       z-index: -1;
+      }
+      .ribbon:before {
+       left: -2em;
+       border-right-width: 1.5em;
+       border-left-color: transparent;
+      }
+      .ribbon:after {
+       right: -2em;
+       border-left-width: 1.5em;
+       border-right-color: transparent;
+      }
+      .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #16c72e transparent transparent transparent;
+        bottom: -1em;
+      }
+      .ribbon .ribbon-content:before {
+        left: 0;
+        border-width: 1em 0 0 1em;
+      }
+      .ribbon .ribbon-content:after {
+         right: 0;
+         border-width: 1em 1em 0 0;
+      }
+    </style>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
