@@ -60,7 +60,7 @@
         $("#check").click(function(){
           var result = expensesCollection.find({
             time:{
-              $lte: year+"-"+month+"-"date,
+              $lte: year+"-"+month+"-"+date,
               $gte: year+"-"+month+"-01"
             }
           });
