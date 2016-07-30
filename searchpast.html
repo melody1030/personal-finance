@@ -49,13 +49,13 @@
           date.getFullYear();
           date.getMonth();
           date.getHours();
-      var firstYear = getFullYear();
-      var firstMonth = getMonth();
+      var year = date.getFullYear();
+      var month  = date.getMonth();
       expensesCollection.load(function(){
         $("#check").click(function(){
           var result = expensesCollection.find({
             $lte: date,
-            $gte: firstYear+"-"+firstMonth+"-01"
+            $gte: year+"-"+month+"-01"
           });
           console.log(result);
         });
