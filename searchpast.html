@@ -51,7 +51,7 @@
           date.getHours();
       var year = date.getFullYear();
       var month  = date.getMonth();
-      var date = 01;
+      console.log(year+"-"+month+"-01");
       expensesCollection.load(function(){
         $("#check").click(function(){
           var result = expensesCollection.find({
