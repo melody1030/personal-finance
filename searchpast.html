@@ -41,5 +41,27 @@
       <tbody>
       </tbody>
     </table>
+    <script>
+      var fdb = new ForerunnerDB();
+      var db = fdb.db("expenses");
+      var expensesCollection = db.collection('expenses');
+      var date = new Date();
+      date.getFullYear();
+      date.getMonth();
+      date.getHours();
+      expensesCollection.load(function(){
+        $("#check").click(function(){
+          var firstday = new Date();
+          firstday.getFullYear();
+          firstday.getMonth();
+          firstday.date = 01;
+          var result = expensesCollection.find({
+            $lte: date,
+            $gte: firstday
+          });
+          console.log(result);
+        })
+      })
+    </script>
   </body>
 </html>
