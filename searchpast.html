@@ -49,18 +49,16 @@
           date.getFullYear();
           date.getMonth();
           date.getHours();
-      var firstday = new Date();
-          firstday.getFullYear();
-          firstday.getMonth();
-          firstday.date = 01;
+      var firstYear = getFullYear();
+      var firstMonth = getMonth();
       expensesCollection.load(function(){
         $("#check").click(function(){
           var result = expensesCollection.find({
             $lte: date,
-            $gte: firstday
+            $gte: firstYear+"-"+firstMonth+"-01"
           });
           console.log(result);
-        })
+        });
       })
     </script>
   </body>
