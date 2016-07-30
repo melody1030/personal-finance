@@ -63,9 +63,9 @@
             time:{
               $lte: year+"-"+month+"-"+date,
               $gte: year+"-"+month+"-01"
-            },
+            }},
             {$orderBy:{time:-1}}
-          });
+          );
           console.log(result);
         });
         for(var i= 0:i<result.length:i++){
