@@ -51,11 +51,12 @@
           date.getHours();
       var year = date.getFullYear();
       var month  = date.getMonth();
+      var date = 01;
       expensesCollection.load(function(){
         $("#check").click(function(){
           var result = expensesCollection.find({
             $lte: date,
-            $gte: year+"-"+month+"-01"
+            $gte: year+"-"+month+"-"
           });
           console.log(result);
         });
