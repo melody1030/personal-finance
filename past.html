@@ -1,1 +1,45 @@
-
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,intitial-scale=1,maximum-scale=1">
+    <script type="text/javascript" src="JS/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="JS/fdb-all.min.js"></script>
+    <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+    <link href="CSS/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 style="text-align:center">支出查詢</h1>
+    <input type="radio" name="month">
+    本月份
+    <br>
+    <input type="radio" name="month">
+    指定月份
+    <br>
+    <input type="date">
+    ~
+    <input type="date">
+    <button id="check" style="width:70%">查詢</button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>類別</td>
+          <td>金額</td>
+          <td>比例</td>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+        <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>日期</td>
+          <td>事項</td>
+          <td>金額</td>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </body>
+</html>
