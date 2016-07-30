@@ -67,14 +67,14 @@
             {$orderBy:{time:-1}}
           );
           console.log(result);
-        });
-        for(var i= 0;i<result.length;i++){
-          $("#on").append(
-            "<tr><td>"+result[i].time+
-            "</td><td>"+result[i].thing+
-            "</td><td>"+result[i].money+
-            "</td></tr>"
-            )
+          for(var i= 0;i<result.length;i++){
+            $("#on").append(
+              "<tr><td>"+result[i].time+
+              "</td><td>"+result[i].thing+
+              "</td><td>"+result[i].money+
+              "</td></tr>"
+            )};
+          });
         }
       })
     </script>
