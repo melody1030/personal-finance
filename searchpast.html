@@ -55,7 +55,7 @@
       expensesCollection.load(function(){
         $("#check").click(function(){
           var result = expensesCollection.find({
-            $lte: date,
+            $lte: date.getFullYear()+"-0"+date.getMonth()+"-"+date.getDate(),
             $gte: year+"-0"+month+"-01"
           });
           console.log(result);
