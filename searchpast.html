@@ -81,12 +81,12 @@
           };
           var sum = type.食+type.衣+type.住+type.行+type.育+type.樂;
           $("#type *").remove();
-          $("#type").append("<tr><td>食</td><td>"+type.食+"<td></td>"+Math.floor(type.食*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>衣</td><td>"+type.衣+"<td></td>"+Math.floor(type.衣*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>住</td><td>"+type.住+"<td></td>"+Math.floor(type.住*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>行</td><td>"+type.行+"<td></td>"+Math.floor(type.行*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>育</td><td>"+type.育+"<td></td>"+Math.floor(type.育*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>樂</td><td>"+type.樂+"<td></td>"+Math.floor(type.樂*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>食</td><td>"+type.食+"<td></td><td>"+Math.floor(type.食*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>衣</td><td>"+type.衣+"<td></td><td>"+Math.floor(type.衣*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>住</td><td>"+type.住+"<td></td><td>"+Math.floor(type.住*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>行</td><td>"+type.行+"<td></td><td>"+Math.floor(type.行*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>育</td><td>"+type.育+"<td></td><td>"+Math.floor(type.育*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>樂</td><td>"+type.樂+"<td></td><td>"+Math.floor(type.樂*100/sum)+"%</td></tr>");
           $("#on *").remove();
           for(var i=0;i<result.length;i++){
             $("#on").append(
