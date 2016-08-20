@@ -81,7 +81,6 @@
           };
           var sum = type.食+type.衣+type.住+type.行+type.育+type.樂;
           $("#type *").remove();
-          console.log(sum)
           $("#type").append(
             "<tr><td>食</td><td>"+type.食+"<td></td>"+Math.floor(type.食*100/sum)+"%</td></tr>"+
             "<tr><td>衣</td><td>"+type.衣+"<td></td>"+Math.floor(type.衣*100/sum)+"%</td></tr>"+
