@@ -51,8 +51,6 @@
       var year = date.getFullYear();
       var month = date.getMonth()+1;
       var date = date.getDate();
-      var startDate = $("#start").val();
-      var endDate = $("#end").val();
       var result = "";
       if(month<10){
         month = "0"+month;
@@ -66,6 +64,8 @@
           var select = $("input[name=month]:checked").val();
           console.log(select);
           if(select == "months"){
+            var startDate = $("#start").val();
+            var endDate = $("#end").val();
             result = expensesCollection.find({
               time:{
                 $gte: startDate,
