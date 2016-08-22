@@ -18,7 +18,7 @@
     <input type="date" style="margin-left:5%" id="start">
     ~
     <input type="date" id="end">
-    <button id="check" class="btn btn-primary" style="width:70%;margin-left:25%">查詢</button>
+    <button id="check" class="btn btn-primary" style="width:70%;margin-left:15%">查詢</button>
     <table class="table table-striped" style="margin-left:5%">
       <thead>
         <tr>
@@ -69,7 +69,7 @@
         $("#check").click(function(){
           select = $("input[name=month]:checked").val();
           console.log(select);
-          if(select == "months"){
+          if(select == "months" && !(startDate=="") && !(endDate=="")){
             startDate = $("#start").val();
             endDate = $("#end").val();
             result = expensesCollection.find({
@@ -90,40 +90,38 @@
               {$orderBy:{time:-1}}
             );
             console.log(result);
-          }
-          if(select == "thismonth"||"months"){
-            type={
-              食:0,
-              衣:0,
-              住:0,
-              行:0,
-              育:0,
-              樂:0,
-            }
-            for(var i=0;i<result.length;i++){
-              thistype=result[i].type;
-              type[thistype] += result[i].money/1
-            };
-            sum = type.食+type.衣+type.住+type.行+type.育+type.樂;
-            $("#type *").remove();
-            $("#type").append("<tr><td>食</td><td>"+type.食+"</td><td>"+Math.floor(type.食*100/sum)+"%</td></tr>");
-            $("#type").append("<tr><td>衣</td><td>"+type.衣+"</td><td>"+Math.floor(type.衣*100/sum)+"%</td></tr>");
-            $("#type").append("<tr><td>住</td><td>"+type.住+"</td><td>"+Math.floor(type.住*100/sum)+"%</td></tr>");
-            $("#type").append("<tr><td>行</td><td>"+type.行+"</td><td>"+Math.floor(type.行*100/sum)+"%</td></tr>");
-            $("#type").append("<tr><td>育</td><td>"+type.育+"</td><td>"+Math.floor(type.育*100/sum)+"%</td></tr>");
-            $("#type").append("<tr><td>樂</td><td>"+type.樂+"</td><td>"+Math.floor(type.樂*100/sum)+"%</td></tr>");
-            $("#on *").remove();
-            for(var i=0;i<result.length;i++){
-              $("#on").append(
-                "<tr><td>"+result[i].time+
-                "</td><td>"+result[i].thing+
-                "</td><td>"+result[i].money+
-                "</td></tr>"
-              )
-            };
           }else{
             alert("You didn't select the month!");
           }
+          type={
+            食:0,
+            衣:0,
+            住:0,
+            行:0,
+            育:0,
+            樂:0,
+          }
+          for(var i=0;i<result.length;i++){
+            thistype=result[i].type;
+            type[thistype] += result[i].money/1
+          };
+          sum = type.食+type.衣+type.住+type.行+type.育+type.樂;
+          $("#type *").remove();
+          $("#type").append("<tr><td>食</td><td>"+type.食+"</td><td>"+Math.floor(type.食*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>衣</td><td>"+type.衣+"</td><td>"+Math.floor(type.衣*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>住</td><td>"+type.住+"</td><td>"+Math.floor(type.住*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>行</td><td>"+type.行+"</td><td>"+Math.floor(type.行*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>育</td><td>"+type.育+"</td><td>"+Math.floor(type.育*100/sum)+"%</td></tr>");
+          $("#type").append("<tr><td>樂</td><td>"+type.樂+"</td><td>"+Math.floor(type.樂*100/sum)+"%</td></tr>");
+          $("#on *").remove();
+          for(var i=0;i<result.length;i++){
+            $("#on").append(
+              "<tr><td>"+result[i].time+
+              "</td><td>"+result[i].thing+
+              "</td><td>"+result[i].money+
+              "</td></tr>"
+            )
+          };
         });
         $("#clear").click(function(){
           $("#type *").remove();
