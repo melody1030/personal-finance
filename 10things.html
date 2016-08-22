@@ -13,6 +13,14 @@
         <strong class="ribbon-content">最近10筆資料</strong>
       </h1>
     </div>
+    <select id="type">
+      <option value="0">請選擇數量</option>
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+    <button class="btn btn-primary" id="show" style="margin-left:15%;width:70%">確認</button>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -74,19 +82,24 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
+      var numbers = 0;
       expensesCollection.load(function(){
-        var expenses = expensesCollection.find(
-          {},
-          {$orderBy:{time:-1},$limit:10}
-        );
-        console.log(expenses);
-        for(var i=0;i<expenses.length;i++){
-          $("#body").append(
-            "<tr><td>"+expenses[i].time+
-            "</td><td>"+expenses[i].thing+
-            "</td><td>"+expenses[i].money+"</td></tr>"
-          )
-        }
+        $("#show").click(function(){
+          numbers = $("#numbers").val();
+          var expenses = expensesCollection.find(
+            {},
+            {$orderBy:{time:-1},$limit: numbers}
+          );
+          console.log(expenses);
+          for(var i=0;i<expenses.length;i++){
+            $("#body *").remove();
+            $("#body").append(
+              "<tr><td>"+expenses[i].time+
+              "</td><td>"+expenses[i].thing+
+              "</td><td>"+expenses[i].money+"</td></tr>"
+            )
+          }
+        });
       });
       
     </script>
