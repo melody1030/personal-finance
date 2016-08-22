@@ -42,7 +42,7 @@
       <tbody id="on">
       </tbody>
     </table>
-    <button class="btn btn-danger" id="clear" style="margin-left:25%;width:50%">清除</button>
+    <button class="btn btn-danger" id="clear" style="margin-left:25%;margin-bottom:5%;width:50%">清除</button>
     <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
     <script>
       var fdb = new ForerunnerDB();
@@ -52,7 +52,13 @@
       var year = date.getFullYear();
       var month = date.getMonth()+1;
       var date = date.getDate();
+      var select = "";
       var result = "";
+      var startDate = "";
+      var endDate = "";
+      var sum = 0;
+      var type = {};
+      var thistype = "";
       if(month<10){
         month = "0"+month;
       }
@@ -62,11 +68,11 @@
       console.log(year+"-"+month+"-01");
       expensesCollection.load(function(){
         $("#check").click(function(){
-          var select = $("input[name=month]:checked").val();
+          select = $("input[name=month]:checked").val();
           console.log(select);
           if(select == "months"){
-            var startDate = $("#start").val();
-            var endDate = $("#end").val();
+            startDate = $("#start").val();
+            endDate = $("#end").val();
             result = expensesCollection.find({
               time:{
                 $gte: startDate,
@@ -87,7 +93,7 @@
             console.log(result);
           }
           if(select == "thismonth"||"months"){
-            var type={
+            type={
               食:0,
               衣:0,
               住:0,
@@ -96,10 +102,10 @@
               樂:0,
             }
             for(var i=0;i<result.length;i++){
-              var thistype=result[i].type;
+              thistype=result[i].type;
               type[thistype] += result[i].money/1
             };
-            var sum = type.食+type.衣+type.住+type.行+type.育+type.樂;
+            sum = type.食+type.衣+type.住+type.行+type.育+type.樂;
             $("#type *").remove();
             $("#type").append("<tr><td>食</td><td>"+type.食+"</td><td>"+Math.floor(type.食*100/sum)+"%</td></tr>");
             $("#type").append("<tr><td>衣</td><td>"+type.衣+"</td><td>"+Math.floor(type.衣*100/sum)+"%</td></tr>");
@@ -117,10 +123,23 @@
               )
             };
             console.log(sum);
+            $("#total *").remove();
             $("#total").append(sum);
           }else{
             alert("You didn't select the month!");
           }
+        });
+        $("#clear").click(function(){
+          $("#type *").remove();
+          $("#on *").remove();
+          $("#total *").remove();
+          select = "";
+          result = "";
+          startDate = "";
+          endDate = "";
+          sum = 0;
+          type = {};
+          thistype = "";
         });
       });
     </script>
