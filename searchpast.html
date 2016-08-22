@@ -51,7 +51,6 @@
       var year = date.getFullYear();
       var month = date.getMonth()+1;
       var date = date.getDate();
-      var select = $("input[name=month]:checked").val();
       var startDate = $("#start").val();
       var endDate = $("#end").val();
       var result = "";
@@ -64,6 +63,7 @@
       console.log(year+"-"+month+"-01");
       expensesCollection.load(function(){
         $("#check").click(function(){
+          var select = $("input[name=month]:checked").val();
           console.log(select);
           if(select == "months"){
             result = expensesCollection.find({
