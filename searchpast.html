@@ -42,6 +42,7 @@
       <tbody id="on">
       </tbody>
     </table>
+    <button class="btn btn-danger" id="clear" style="margin-left:25%;width:50%">清除</button>
     <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
     <script>
       var fdb = new ForerunnerDB();
@@ -116,6 +117,7 @@
               )
             };
             console.log(sum);
+            $("#total").append(sum);
           }else{
             alert("You didn't select the month!");
           }
