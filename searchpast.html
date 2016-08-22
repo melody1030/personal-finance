@@ -15,9 +15,9 @@
     <input type="radio" name="month" value="months" style="margin-left:5%">
     指定月份
     <br>
-    <input type="date" style="margin-left:5%">
+    <input type="date" style="margin-left:5%" id="start">
     ~
-    <input type="date">
+    <input type="date" id="end">
     <button id="check" class="btn btn-primary" style="width:70%;margin-left:5%">查詢</button>
     <table class="table table-striped">
       <thead>
@@ -51,6 +51,10 @@
       var year = date.getFullYear();
       var month = date.getMonth()+1;
       var date = date.getDate();
+      var select = $("input[name=month]:checked").val();
+      var startDate = $("#start").val();
+      var endDate = $("#end").val();
+      var result = "";
       if(month<10){
         month = "0"+month;
       }
@@ -60,14 +64,25 @@
       console.log(year+"-"+month+"-01");
       expensesCollection.load(function(){
         $("#check").click(function(){
-          var result = expensesCollection.find({
-            time:{
-              $gte: year+"-"+month+"-01",
-              $lte: year+"-"+month+"-"+date
-            }},
-            {$orderBy:{time:-1}}
-          );
-          console.log(result);
+          if(select == "months"){
+            result = expensesCollection.find({
+              time:{
+                $gte: startDate,
+                $lte: endDate
+              }},
+              {$orderBy:{time:-1}}
+            );
+            console.log(result);
+          }else{
+            result = expensesCollection.find({
+              time:{
+                $gte: year+"-"+month+"-01",
+                $lte: year+"-"+month+"-"+date
+              }},
+              {$orderBy:{time:-1}}
+            );
+            console.log(result);
+        }
           var type={
             食:0,
             衣:0,
