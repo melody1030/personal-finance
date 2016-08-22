@@ -29,7 +29,6 @@
       </thead>
       <tbody id="type">
       </tbody>
-    <p id="total">總計:</p>
     </table>
         <table class="table table-striped">
       <thead>
@@ -122,9 +121,6 @@
                 "</td></tr>"
               )
             };
-            console.log(sum);
-            $("#total *").remove();
-            $("#total").append(sum);
           }else{
             alert("You didn't select the month!");
           }
@@ -132,7 +128,6 @@
         $("#clear").click(function(){
           $("#type *").remove();
           $("#on *").remove();
-          $("#total *").remove();
           select = "";
           result = "";
           startDate = "";
