@@ -62,9 +62,9 @@
         date = "0"+date;
       }
       console.log(year+"-"+month+"-01");
-      console.log(select);
       expensesCollection.load(function(){
         $("#check").click(function(){
+          console.log(select);
           if(select == "months"){
             result = expensesCollection.find({
               time:{
@@ -75,7 +75,7 @@
             );
             console.log(startDate+" , "+endDate);
             console.log(result);
-          }else if(select === "thismonth"){
+          }else if(select == "thismonth"){
             result = expensesCollection.find({
               time:{
                 $gte: year+"-"+month+"-01",
