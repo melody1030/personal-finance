@@ -93,8 +93,8 @@
               {$orderBy:{time:-1},$limit: numbers}
             );
             console.log(expenses);
+            $("#body *").remove();
             for(var i=0;i<expenses.length;i++){
-              $("#body *").remove();
               $("#body").append(
                 "<tr><td>"+expenses[i].time+
                 "</td><td>"+expenses[i].thing+
