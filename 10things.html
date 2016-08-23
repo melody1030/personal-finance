@@ -85,20 +85,24 @@
       var numbers = 0;
       expensesCollection.load(function(){
         $("#show").click(function(){
-          numbers = $("#numbers").val();
-          console.log(numbers);
-          var expenses = expensesCollection.find(
-            {},
-            {$orderBy:{time:-1},$limit: numbers}
-          );
-          console.log(expenses);
-          for(var i=0;i<expenses.length;i++){
-            $("#body *").remove();
-            $("#body").append(
-              "<tr><td>"+expenses[i].time+
-              "</td><td>"+expenses[i].thing+
-              "</td><td>"+expenses[i].money+"</td></tr>"
-            )
+          if(!(numbers===0)){
+            numbers = $("#type").val();
+            console.log(numbers);
+            var expenses = expensesCollection.find(
+              {},
+              {$orderBy:{time:-1},$limit: numbers}
+            );
+            console.log(expenses);
+            for(var i=0;i<expenses.length;i++){
+              $("#body *").remove();
+              $("#body").append(
+                "<tr><td>"+expenses[i].time+
+                "</td><td>"+expenses[i].thing+
+                "</td><td>"+expenses[i].money+"</td></tr>"
+              )
+            };
+          }else{
+            alert("Please select a number!");
           }
         });
       });
