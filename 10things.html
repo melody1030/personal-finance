@@ -82,11 +82,10 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
-      var numbers = 0;
       expensesCollection.load(function(){
         $("#show").click(function(){
           if(!(numbers===0)){
-            numbers = $("#type").val();
+            var numbers = $("#type").val();
             console.log(numbers);
             var expenses = expensesCollection.find(
               {},
