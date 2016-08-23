@@ -85,8 +85,8 @@
       var numbers = 0;
       expensesCollection.load(function(){
         $("#show").click(function(){
+          numbers = $("#type").val();
           if(!(numbers===0)){
-            numbers = $("#type").val();
             console.log(numbers);
             var expenses = expensesCollection.find(
               {},
