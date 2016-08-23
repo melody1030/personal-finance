@@ -86,6 +86,7 @@
       expensesCollection.load(function(){
         $("#show").click(function(){
           numbers = $("#numbers").val();
+          console.log(numbers);
           var expenses = expensesCollection.find(
             {},
             {$orderBy:{time:-1},$limit: numbers}
