@@ -46,6 +46,7 @@ body{
   border-width: 1em 1em 0 0;
 }
 .mainbutton {
+  width:20%;
   border-radius:30%;
-  background-color:#D96459;
+  background-color:#FF726A;
 }
