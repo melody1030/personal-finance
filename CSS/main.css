@@ -45,3 +45,6 @@ body{
   right: 0;
   border-width: 1em 1em 0 0;
 }
+table{
+  border-color: #39B54A;
+}
