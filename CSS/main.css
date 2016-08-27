@@ -1,5 +1,5 @@
 body{
-  background-color:#f2e394;
+  background-color:#F2FFC4;
 }
 .ribbon {
   font-size: 15px;
@@ -48,6 +48,5 @@ body{
 .mainbutton {
   font-family:Helvetica Neue;
   height:5%;
-  border-radius:50%;
   background-color:#30c9e8;
 }
