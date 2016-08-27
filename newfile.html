@@ -6,6 +6,7 @@
     <script type="text/javascript" src="JS/fdb-all.min.js"></script>
     <script type="text/javascript" src="JS/bootstrap.min.js"></script>
     <link href="CSS/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
   </head>
   <body>
     <div class="non-semantic-protector"> 
@@ -42,52 +43,6 @@
     <br>
     <br>
     <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
-    <style>
-      .ribbon {
-       font-size: 15px;
-       width: 70%;
-       position: relative;
-       background: #e8308c;
-       color: #5c0a33;
-       text-align: center;
-       padding: 15px 35px;
-       margin: 2em auto 3em;
-      }
-      .ribbon:before, .ribbon:after {
-       content: "";
-       position: absolute;
-       display: block;
-       bottom: -1em;
-       border: 1.5em solid #911051;
-       z-index: -1;
-      }
-      .ribbon:before {
-       left: -2em;
-       border-right-width: 1.5em;
-       border-left-color: transparent;
-      }
-      .ribbon:after {
-       right: -2em;
-       border-left-width: 1.5em;
-       border-right-color: transparent;
-      }
-      .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-        content: "";
-        position: absolute;
-        display: block;
-        border-style: solid;
-        border-color: #c7166f transparent transparent transparent;
-        bottom: -1em;
-      }
-      .ribbon .ribbon-content:before {
-        left: 0;
-        border-width: 1em 0 0 1em;
-      }
-      .ribbon .ribbon-content:after {
-         right: 0;
-         border-width: 1em 1em 0 0;
-      }
-    </style>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("expenses");
