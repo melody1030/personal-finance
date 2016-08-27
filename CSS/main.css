@@ -46,6 +46,6 @@ body{
   border-width: 1em 1em 0 0;
 }
 .mainbutton {
-  border-radius:10%;
-  border:2% dashed #D96459;
+  border-radius:30%;
+  color:#D96459;
 }
