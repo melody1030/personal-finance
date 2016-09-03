@@ -55,3 +55,7 @@ table {
   border-collapse:separate;
   padding-bottom:3%;
 }
+th{
+  padding: 15px;
+  text-align: left;
+}
