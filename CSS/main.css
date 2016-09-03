@@ -50,6 +50,6 @@ table, td, tr {
   text-align: center;
 }
 table {
-  border-collapse: collapse;
   width: 100%;
+  border-collapse:separate;
 }
