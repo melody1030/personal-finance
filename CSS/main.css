@@ -45,9 +45,10 @@ body{
   right: 0;
   border-width: 1em 1em 0 0;
 }
-table, td, tr {
-  padding: 8px;
+td{
+  padding: 10px;
   text-align: center;
+  border-bottom: 1px solid #60c7ea;
 }
 table {
   width: 100%;
