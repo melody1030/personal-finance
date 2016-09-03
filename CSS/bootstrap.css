@@ -6912,7 +6912,6 @@ table:not(.table-bordered) > tbody > tr > td,
 .table:not(.table-bordered) > tbody > tr > td,
 table:not(.table-bordered) > tfoot > tr > td,
 .table:not(.table-bordered) > tfoot > tr > td {
-  border-color: transparent;
 }
 .form-control {
   -webkit-box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.075);
