@@ -46,16 +46,10 @@ body{
   border-width: 1em 1em 0 0;
 }
 table, td, tr {
-  border: 1px solid #5e5e5e;
-  text-align: left;
+  padding: 8px;
+  text-align: center;
 }
-
 table {
   border-collapse: collapse;
   width: 100%;
-}
-tr, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #5e5e5e;
 }
