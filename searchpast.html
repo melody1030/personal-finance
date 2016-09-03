@@ -24,7 +24,7 @@
     ~
     <input type="date" id="end">
     <button id="check" class="btn btn-primary" style="width:70%;margin-left:15%">查詢</button>
-    <table class="table table-striped" style="margin-left:5%">
+    <table>
       <thead>
         <tr>
           <td>類別</td>
@@ -35,7 +35,7 @@
       <tbody id="type">
       </tbody>
     </table>
-        <table class="table table-striped" style="margin-left:5%">
+        <table>
       <thead>
         <tr>
           <td>日期</td>
@@ -46,7 +46,6 @@
       <tbody id="on">
       </tbody>
     </table>
-    <button class="btn btn-danger" id="clear" style="margin-left:25%;margin-bottom:5%;width:50%">清除</button>
     <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
     <script>
       var fdb = new ForerunnerDB();
@@ -127,17 +126,6 @@
               "</td></tr>"
             )
           };
-        });
-        $("#clear").click(function(){
-          $("#type *").remove();
-          $("#on *").remove();
-          select = "";
-          result = "";
-          startDate = "";
-          endDate = "";
-          sum = 0;
-          type = {};
-          thistype = "";
         });
       });
     </script>
