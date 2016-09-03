@@ -1,12 +1,16 @@
-th<html>
+<html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,intitial-scale=1,maximum-scale=1">
     <script type="text/javascript" src="JS/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="JS/picker.js"></script>
+    <script type="text/javascript" src="JS/picker.date.js"></script>
     <script type="text/javascript" src="JS/fdb-all.min.js"></script>
     <script type="text/javascript" src="JS/bootstrap.min.js"></script>
     <link href="CSS/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/default.css">
+    <link rel="stylesheet" href="CSS/default.date.css">
   </head>
   <body>
     <div class="non-semantic-protector"> 
@@ -20,9 +24,9 @@ th<html>
     <input type="radio" name="month" value="months" style="margin-left:5%">
     指定月份
     <br>
-    <input type="date" style="margin-left:5%" id="start">
+    <input type="text" style="margin-left:5%;width:30%" id="start" class="datepicker">
     ~
-    <input type="date" id="end">
+    <input type="text" style="width:30%" id="end" class="datepicker">
     <button id="check" class="btn btn-primary" style="width:70%;margin-left:15%">查詢</button>
     <table>
       <thead>
@@ -70,6 +74,7 @@ th<html>
       }
       console.log(year+"-"+month+"-01");
       expensesCollection.load(function(){
+        $('.datepicker').pickadate({format:"yyyy-mm-dd"});
         $("#check").click(function(){
           select = $("input[name=month]:checked").val();
           console.log(select);
