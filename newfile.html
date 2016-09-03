@@ -24,7 +24,7 @@
     <br>
     <br>
     時間
-    <input style="width:80%;display:inline" class="datepicker" type="text">
+    <input style="width:80%;display:inline" class="datepicker" type="text" id="date">
     <br>
     <br>
     類別
@@ -52,13 +52,16 @@
       var db = fdb.db("expenses");
       var expensesCollection = db.collection('expenses');
       expensesCollection.load(function(){
+        $('.datepicker').pickadate({format:"yyyy-mm-dd"})
         $("#add").click(function(){
           expensesCollection.insert({
             money:$("#money").val(),
             thing:$("#thing").val(),
+            time:$("#date").val(),
             type:$("#type").val(),
           });
           $("#money").val("");
+          $("#date").val("");
           $("#thing").val("");
           $("#type").val("");
           expensesCollection.save();
