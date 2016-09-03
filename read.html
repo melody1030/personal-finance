@@ -42,9 +42,10 @@
         }
         $(".delete").click(function(){
           var ans = confirm("確定要刪除嗎？");
+          console.log(ans);
           if(ans === true){
             expensesCollection.remove({
-              _id: $(this).data("id")
+              thing: $(this).data("thing")
             });
           };
           studentCollection.save();
