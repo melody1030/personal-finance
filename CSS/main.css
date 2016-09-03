@@ -48,7 +48,6 @@ body{
 table, td, th {
   border: 1px solid #5e5e5e;
   text-align: left;
-  background-color:#f6e082;
 }
 
 table {
@@ -56,6 +55,7 @@ table {
   width: 100%;
 }
 th, td {
+  background-color:#f6e082;
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #5e5e5e;
