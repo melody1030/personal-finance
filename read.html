@@ -46,16 +46,17 @@
             expensesCollection.remove({
               _id: $(this).data("id")
             });
-            studentCollection.save();
-            $("#body *").remove();
-            for(var i =0;i<expenses.length;i++){
-              $("#body").append("<tr class='row'><td>"+expenses[i].time+
-              "</td><td>"+expenses[i].thing+
-              "</td><td>"+expenses[i].money+
-              "</td><td><button class='delete'>刪除</button></td>"
-              );
-            };
-          })
+          };
+          studentCollection.save();
+          $("#body *").remove();
+          for(var i =0;i<expenses.length;i++){
+            $("#body").append("<tr class='row'><td>"+expenses[i].time+
+            "</td><td>"+expenses[i].thing+
+            "</td><td>"+expenses[i].money+
+            "</td><td><button class='delete'>刪除</button></td>"
+            );
+          };
+        })
         console.log("done!");
       });
     </script>
