@@ -55,8 +55,9 @@
           $("#comfirm").append("已新增！")
         });
         var expenses = expensesCollection.find();
+        $("#body *").remove();
         for(var i =0;i<expenses.length;i++){
-          $("#body").append("</td><td>"+expenses[i].thing+
+          $("#body").append("<tr></td><td>"+expenses[i].thing+
           "</td><td>"+expenses[i].money+
           "</td></tr>");
         }
