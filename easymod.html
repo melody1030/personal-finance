@@ -44,6 +44,16 @@
       var db = fdb.db("easy");
       var expensesCollection = db.collection('easy');
       expensesCollection.load(function(){
+        $("#add").click(function(){
+          expensesCollection.insert({
+            money:$("#money").val(),
+            thing:$("#thing").val(),
+          });
+          $("#money").val("");
+          $("#date").val("");
+          expensesCollection.save();
+          $("#comfirm").append("已新增！")
+        });
         var expenses = expensesCollection.find();
         for(var i =0;i<expenses.length;i++){
           $("#body").append("</td><td>"+expenses[i].thing+
