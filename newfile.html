@@ -43,6 +43,7 @@
     <input style="width:80%;display:inline" calss="form-contorl" type="text" id="money">
     <br>
     <br>
+    <h3 id="comfirm"></h3>
     <button id="add" class="btn btn-info" style="width:100%">確認</button>
     <br>
     <br>
@@ -65,6 +66,7 @@
           $("#thing").val("");
           $("#type").val("");
           expensesCollection.save();
+          $("#comfirm").append("已新增！")
         });
       });
     </script>
