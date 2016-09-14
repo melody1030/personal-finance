@@ -18,5 +18,41 @@
         <strong class="ribbon-content">簡單模式</strong>
       </h1>
     </div>
+    <span>事項</span>
+    <input style="width:80%;display:inline" calss="form-contorl" type="text" id="thing">
+    <br>
+    <br>
+    span>金額<span>
+    <input style="width:80%;display:inline" calss="form-contorl" type="text" id="money">
+    <br>
+    <br>
+    <h3 id="comfirm" style="padding-left: 40%"></h3>
+    <button id="add" class="btn btn-info" style="width:100%">確認</button>
+    <table>
+      <thead>
+        <tr>
+          <th>事項</th>
+          <th>金額</th>
+        </tr>
+      </thead>
+      <tbody id="body">
+      </tbody>
+    </table>
+    <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
+    <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
+    <script>
+      var fdb = new ForerunnerDB();
+      var db = fdb.db("easy");
+      var expensesCollection = db.collection('easy');
+      expensesCollection.load(function(){
+        var expenses = expensesCollection.find();
+        for(var i =0;i<expenses.length;i++){
+          $("#body").append("</td><td>"+expenses[i].thing+
+          "</td><td>"+expenses[i].money+
+          "</td></tr>");
+        }
+        console.log("done!");
+      });
+    </script>
   </body>
 </html>
