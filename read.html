@@ -27,7 +27,6 @@
       <tbody id="body">
       </tbody>
     </table>
-    <button id="delete" class="btn btn-warnig">刪除</button>
     <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
     <script>
       var fdb = new ForerunnerDB();
@@ -40,10 +39,13 @@
           "</td><td>"+expenses[i].thing+
           "</td><td>"+expenses[i].type+
           "</td><td>"+expenses[i].money+
-          "</td><td><input type='radio' id="+expenses[i]._id+"></td></tr>");
+          "</td><td><button class='delete' class='btn btn-warning'>"+刪除+"</button></td></tr>");
         }
         console.log("done!");
-        
+        $(".delete").click(function(){
+          var thisId = $(this).text();
+          console.log(thisId);
+        })
       });
     </script>
   </body>
