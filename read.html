@@ -47,9 +47,9 @@
           var ans = confirm("確定要刪除嗎?");
           console.log(ans);
           if(ans === true){
-            console.log($(this).data("thing"));
+            console.log($(this).data("_id"));
             expensesCollection.remove({
-              _id: $(this).data("id")
+              _id: $(this).data("_id")
             });
             expensesCollection.save();
             $("#body *").remove();
