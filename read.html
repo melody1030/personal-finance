@@ -54,7 +54,7 @@
             expensesCollection.save();
             $("#body *").remove();
             for(var i =0;i<expenses.length;i++){
-              $("#body").append("<tr><td>"+expenses[i].time+
+              $("#body").append("<tr><td id="+expenses[i]._id+">"+expenses[i].time+
               "</td><td>"+expenses[i].thing+
               "</td><td>"+expenses[i].type+
               "</td><td>"+expenses[i].money+
