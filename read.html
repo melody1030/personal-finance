@@ -44,7 +44,8 @@
         console.log("done!");
         $("body").on("click",".delete",function(){
           console.log("enter");
-          var ans = prompt("確定要刪除嗎?");
+          var ans = comfirm("確定要刪除嗎?");
+          console.log(ans);
           if(ans === true){
             expensesCollection.remove({
               _id: $(this).data("id")
