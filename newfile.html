@@ -66,6 +66,7 @@
           $("#thing").val("");
           $("#type").val("");
           expensesCollection.save();
+          $("#comfirm *").remove();
           $("#comfirm").append("已新增！")
         });
       });
