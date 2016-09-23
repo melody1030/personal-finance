@@ -53,9 +53,7 @@
             });
             console.log(deleteID);
             for(var i=0;i<deleteID.length;i++){
-              expensesCollection.remove({
-                id:deleteID[i]+
-              });
+              expensesCollection.remove({id:deleteID[i]});
               console.log(deleteID[i]);
             };
             expensesCollection.save();
