@@ -40,23 +40,18 @@
           "</td><td>"+expenses[i].thing+
           "</td><td>"+expenses[i].type+
           "</td><td>"+expenses[i].money+
-          "</td><td>刪除<input type='checkbox'class='delete-btn' value="+i+"></td></tr>");
+          "</td><td>刪除<input type='checkbox'class='delete-btn' name="delete" value="+expenses[i]._id+"></td></tr>");
         }
         console.log("done!");
         $("#delete").click(function(){
           var deleteID=[];
-          for(var i=0;i<expenses.length;i++){
-            deleteID.push(expenses[i]._id);
-          }
+          $('input:checkbox:[name="delete"][checked=true]').each(function() {
+            deleteID.push(this.value);
+          });
           console.log(deleteID);
           var ans = confirm("確定要刪除嗎?");
           console.log(ans);
           if(ans === true){
-            for(var i=0;i<expenses.length;i++){
-              if($(".delete-btn:nth-cheild(i)").prop("checked"===false)){
-                deleteID.splice(pos, i);
-              }
-            }
             expensesCollection.save();
             $("#body *").remove();
             for(var i =0;i<expenses.length;i++){
