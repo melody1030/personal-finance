@@ -52,13 +52,13 @@
             deleteID.push(this.value);
             });
             console.log(deleteID);
-            for(var i=0;i<expenses.length;i++){
+            for(var i=0;i<deleteID.length;i++){
               expensesCollection.remove({
                 id:deleteID[i]
               });
             };
             expensesCollection.save();
-            expensesCollection.find();
+            console.log(expensesCollection.find());
             $("#body *").remove();
             for(var i =0;i<expenses.length;i++){
               $("#body").append("<tr><td>"+expenses[i].time+
