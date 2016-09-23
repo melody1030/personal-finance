@@ -64,10 +64,9 @@
           $("#money").val("");
           $("#date").val("");
           $("#thing").val("");
-          $("#type").val("");
+          $("#type").val("請選擇類別");
           expensesCollection.save();
-          $("#comfirm *").remove();
-          $("#comfirm").append("已新增！")
+          alert("已新增！");
         });
       });
     </script>
