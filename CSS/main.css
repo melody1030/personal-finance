@@ -46,7 +46,8 @@ body{
   border-width: 1em 1em 0 0;
 }
 td{
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom:10px;
   text-align: center;
   border-bottom: 1px solid #60c7ea;
 }
