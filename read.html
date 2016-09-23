@@ -48,7 +48,7 @@
           console.log(ans);
           if(ans === true){
             var deleteID=[];
-            $('input:checkbox:[name="delete"][checked=true]').each(function() {
+            $("input:checked").each(function() {
             deleteID.push(this.value);
             });
             console.log(deleteID);
