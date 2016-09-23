@@ -27,7 +27,7 @@
       <tbody id="body">
       </tbody>
     </table>
-    <button class="btn btn-warning" if="delete">刪除</button>
+    <button class="btn btn-warning" id="delete">刪除</button>
     <a href="index.html"><button class="btn btn-success" style="margin-left:25%;width:50%">返回</button></a>
     <script>
       var fdb = new ForerunnerDB();
@@ -43,7 +43,7 @@
           "</td><td>刪除<input type='checkbox'class='delete-btn' value="+i+"></td></tr>");
         }
         console.log("done!");
-        $("body").on("click","#delete",function(){
+        $("#delete").click(function(){
           var deleteID=[];
           for(var i=0;i<expenses.length;i++){
             deleteID.push(expenses[i]._id);
@@ -69,7 +69,7 @@
           }else{
             alert("沒有刪除");
           }
-        })
+        });
       });
     </script>
   </body>
