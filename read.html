@@ -44,14 +44,14 @@
         }
         console.log("done!");
         $("#delete").click(function(){
-          var deleteID=[];
-          $('input:checkbox:[name="delete"][checked=true]').each(function() {
-            deleteID.push(this.value);
-          });
-          console.log(deleteID);
           var ans = confirm("確定要刪除嗎?");
           console.log(ans);
           if(ans === true){
+            var deleteID=[];
+            $('input:checkbox:[name="delete"][checked=true]').each(function() {
+            deleteID.push(this.value);
+            });
+            console.log(deleteID);
             expensesCollection.save();
             $("#body *").remove();
             for(var i =0;i<expenses.length;i++){
