@@ -53,7 +53,7 @@
             });
             console.log(deleteID);
             for(var i = 0;i<deleteID.length;i++){
-              expensesCollection.remove({＿id:deleteID[i]});
+              exepensesCollection.remove({ _id:deleteID[i]});
             };
             expensesCollection.save();
             console.log(expensesCollection.find());
