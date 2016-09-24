@@ -42,6 +42,7 @@
         $("#show").click(function(){
           numbers = $("#type").val();
           if(!(numbers===0)){
+            console.log(numbers);
             var expenses = expensesCollection.find(
               {},
               {$orderBy:{time:-1},$limit: numbers}
@@ -57,7 +58,6 @@
             };
           }else{
             alert("Please select a number!");
-            console.log(numbers);
           }
         });
       });
