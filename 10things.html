@@ -42,7 +42,6 @@
         $("#show").click(function(){
           numbers = $("#type").val();
           if(!(numbers===0)){
-            console.log(numbers);
             var expenses = expensesCollection.find(
               {},
               {$orderBy:{time:-1},$limit: numbers}
