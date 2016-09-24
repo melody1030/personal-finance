@@ -13,8 +13,10 @@
       An easy app for charge your money.
   </description>
 
-  <author href="https://build.phonegap.com" email="support@phonegap.com">
-      Hardeep Shoker
+  <author href="https://www.facebook.com/" email="melody.0973621846@gmail.com">
+      Melody Huang
   </author>
+  
+  <icon src="Image/clock-with-dollar-sign.png" />
 
 </widget>
