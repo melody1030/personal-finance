@@ -123,6 +123,7 @@
                 );
                 console.log(startDate+" , "+endDate);
                 console.log(result);
+                showData();
             }else if(select == "thismonth"){
                 result = expensesCollection.find({
                     time:{
@@ -132,6 +133,7 @@
                   {$orderBy:{time:-1}}
                 );
                 console.log(result);
+                showData();
             };
         });
       });
