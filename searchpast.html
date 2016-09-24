@@ -75,61 +75,62 @@
       expensesCollection.load(function(){
         $('.datepicker').pickadate({format:"yyyy-mm-dd"});
         $("#check").click(function(){
-          select = $("input[name=month]:checked").val();
-          console.log(select);
-          startDate = $("#start").val();
-          endDate = $("#end").val();
-          if(select == "months" && !(startDate=="") && !(endDate=="")){
+        select = $("input[name=month]:checked").val();
+        console.log(select);
+        startDate = $("#start").val();
+        endDate = $("#end").val();
+        if(select == "months" && !(startDate=="") && !(endDate=="")){
             result = expensesCollection.find({
-              time:{
-                $gte: startDate,
-                $lte: endDate
-              }},
-              {$orderBy:{time:-1}}
+                time:{
+                    $gte: startDate,
+                    $lte: endDate
+                }},
+                {$orderBy:{time:-1}}
             );
             console.log(startDate+" , "+endDate);
             console.log(result);
-          }else if(select == "thismonth"){
+        }else if(select == "thismonth"){
             result = expensesCollection.find({
-              time:{
+                time:{
                 $gte: year+"-"+month+"-01",
                 $lte: year+"-"+month+"-"+date
               }},
               {$orderBy:{time:-1}}
             );
             console.log(result);
-          }else{
+          };
+        if(!(select=="thismonth"||select=="months"){
             alert("You didn't select the month!");
-          type={
-            食:0,
-            衣:0,
-            住:0,
-            行:0,
-            育:0,
-            樂:0,
-          }
-          for(var i=0;i<result.length;i++){
-            thistype=result[i].type;
-            type[thistype] += result[i].money/1
-          };
-          sum = type.食+type.衣+type.住+type.行+type.育+type.樂;
-          $("#type *").remove();
-          $("#type").append("<tr><td>食</td><td>"+type.食+"</td><td>"+Math.floor(type.食*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>衣</td><td>"+type.衣+"</td><td>"+Math.floor(type.衣*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>住</td><td>"+type.住+"</td><td>"+Math.floor(type.住*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>行</td><td>"+type.行+"</td><td>"+Math.floor(type.行*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>育</td><td>"+type.育+"</td><td>"+Math.floor(type.育*100/sum)+"%</td></tr>");
-          $("#type").append("<tr><td>樂</td><td>"+type.樂+"</td><td>"+Math.floor(type.樂*100/sum)+"%</td></tr>");
-          $("#on *").remove();
-          for(var i=0;i<result.length;i++){
-            $("#on").append(
-              "<tr><td>"+result[i].time+
-              "</td><td>"+result[i].thing+
-              "</td><td>"+result[i].money+
-              "</td></tr>"
-            )
-          };
-          };
+            type={
+                食:0,
+                衣:0,
+                住:0,
+                行:0,
+                育:0,
+                樂:0,
+              };
+            for(var i=0;i<result.length;i++){
+                thistype=result[i].type;
+                type[thistype] += result[i].money/1
+            };
+            sum = type.食+type.衣+type.住+type.行+type.育+type.樂;
+            $("#type *").remove();
+            $("#type").append("<tr><td>食</td><td>"+type.食+"</td><td>"+Math.floor(type.食*100/sum)+"%</td></tr>");
+            $("#type").append("<tr><td>衣</td><td>"+type.衣+"</td><td>"+Math.floor(type.衣*100/sum)+"%</td></tr>");
+            $("#type").append("<tr><td>住</td><td>"+type.住+"</td><td>"+Math.floor(type.住*100/sum)+"%</td></tr>");
+            $("#type").append("<tr><td>行</td><td>"+type.行+"</td><td>"+Math.floor(type.行*100/sum)+"%</td></tr>");
+            $("#type").append("<tr><td>育</td><td>"+type.育+"</td><td>"+Math.floor(type.育*100/sum)+"%</td></tr>");
+            $("#type").append("<tr><td>樂</td><td>"+type.樂+"</td><td>"+Math.floor(type.樂*100/sum)+"%</td></tr>");
+            $("#on *").remove();
+            for(var i=0;i<result.length;i++){
+                $("#on").append(
+                    "<tr><td>"+result[i].time+
+                    "</td><td>"+result[i].thing+
+                    "</td><td>"+result[i].money+
+                    "</td></tr>"
+                );
+            };
+        };
         });
       });
     </script>
