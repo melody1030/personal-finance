@@ -16,7 +16,7 @@ body{
   position: absolute;
   display: block;
   bottom: -1em;
-  border: 1.5em solid #107c91;
+  border: 1.5em solid #16a9c7;
   z-index: -1;
 }
 .ribbon:before {
@@ -34,7 +34,7 @@ body{
   position: absolute;
   display: block;
   border-style: solid;
-  border-color: #16a9c7 transparent transparent transparent;
+  border-color: #107c91 transparent transparent transparent;
   bottom: -1em;
 }
   .ribbon .ribbon-content:before {
