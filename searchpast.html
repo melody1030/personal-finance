@@ -75,7 +75,7 @@
       expensesCollection.load(function(){
         $('.datepicker').pickadate({format:"yyyy-mm-dd"});
         $("#check").click(function(){
-            function showData(data){
+            function showData(){
                 type={
                     食:0,
                     衣:0,
@@ -123,12 +123,7 @@
                 );
                 console.log(startDate+" , "+endDate);
                 console.log(result);
-                if(result==""){
-                    alert("查無資料，請加入資料");
-                    consol.log(result);
-                }else{
-                    showData(expensesCollection.find());
-                };
+                showData();
             }else if(select == "thismonth"){
                 result = expensesCollection.find({
                     time:{
@@ -138,12 +133,7 @@
                   {$orderBy:{time:-1}}
                 );
                 console.log(result);
-                if(result==""){
-                    alert("查無資料，請加入資料");
-                }else{
-                    showData(expensesCollection.find());
-                    console.log(reslut);
-                };
+                showData();
             };
         });
       });
